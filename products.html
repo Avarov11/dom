@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+        width:100%;
+
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px;
+            width: 400px; /* Increase the width */
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color:#333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        #cart {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+        }
+
+        #cart h3 {
+            margin-bottom: 10px;
+        }
+
+        #cartItems {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-item button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        /* Added styles for the checkout button */
+        #checkout {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            width: 100%;
+            display: block;
+            margin-top: 20px;
+        }
+
+        #checkout:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Advanced Add to Cart Page</title>
+</head>
+<body>
+            <header>
+        <a href="home.html">Home</a>
+        <a href="products.html">Add to Cart</a>
+        <a href="payment.php">Payment</a>
+        <a href="index.php">Sign Up</a>
+        <a href="signin.php">Sign In</a>
+        <a href="feedback.php">feedback</a>
+    </header>
+
+    
+    <div class="container">
+        <div class="product" id="product1">
+            <img src="2png.png" alt="Product 1">
+            <div class="product-info">
+                <h2>BMW 420</h2>
+                <p>BMW</p>
+                <p>Price: $24.99</p>
+                <button onclick="addToCart('Product 1', 24.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product" id="product2">
+            <img src="3.png" alt="Product 2">
+            <div class="product-info">
+                <h2>BMW I8</h2>
+                <p>BMW I8</p>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart('Product 2', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+        
+            <div class="container">
+        <div class="product" id="product1">
+            <img src="4.png" alt="Product 1">
+            <div class="product-info">
+                <h2>BMW</h2>
+                <p>BMW</p>
+                <p>Price: $20</p>
+                <button onclick="addToCart('Product 3', 24.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product" id="product2">
+            <img src="g.png" alt="Product 2">
+            <div class="product-info">
+                <h2>MERCEDES</h2>
+                <p>G-class</p>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart('Product 4', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="container">
+        <div class="product" id="product1">
+            <img src="lamb.png" alt="Product 1">
+            <div class="product-info">
+                <h2>LAMBO</h2>
+                <p>Description: Lamboo</p>
+                <p>Price: $24.99</p>
+                <button onclick="addToCart('Product 5', 24.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product" id="product2">
+            <img src="mer.png" alt="Product 2">
+            <div class="product-info">
+                <h2>BMW</h2>
+                <p>Description: BMW 320.</p>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart('Product 6', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+                        
+    <div class="container">
+        <div class="product" id="product1">
+            <img src="mini.png" alt="Product 1">
+            <div class="product-info">
+                <h2>MINI COOPER</h2>
+                <p>Minicooper</p>
+                <p>Price: $24.99</p>
+                <button onclick="addToCart('Product 7', 24.99)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" id="product2">
+            <img src="mini2.png" alt="Product 2">
+            <div class="product-info">
+                <h2>MINI COOPER 2</h2>
+                <p>Minicooper2</p>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart('Product 8', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+
+
+       
+
+    <div id="cart">
+        <h3>Shopping Cart</h3>
+        <ul id="cartItems"></ul>
+        <a href="payment.php" id="checkout">Checkout</a>
+    </div>
+
+<script>
+        function addToCart(productName, productPrice) {
+            const cartItems = document.getElementById("cartItems");
+            const existingCartItem = document.querySelector(`#cartItems li[data-product="${productName}"]`);
+
+            if (existingCartItem) {
+                // If the item is already in the cart, update the quantity
+                const quantityInput = existingCartItem.querySelector(".quantity-input");
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            } else {
+                // If the item is not in the cart, add a new cart item
+                const cartItem = document.createElement("li");
+                cartItem.className = "cart-item";
+                cartItem.dataset.product = productName;
+                cartItem.innerHTML = `
+                    <span>${productName}</span>
+                    <button onclick="updateQuantity(this, -1)">-</button>
+                    <input class="quantity-input" type="number" value="1" min="1">
+                    <button onclick="updateQuantity(this, 1)">+</button>
+                    <span>$${productPrice.toFixed(2)}</span>
+                    <button onclick="removeCartItem(this)">Remove</button>
+                `;
+                cartItems.appendChild(cartItem);
+            }
+        }
+
+        function updateQuantity(button, amount) {
+            const quantityInput = button.parentNode.querySelector(".quantity-input");
+            const newQuantity = parseInt(quantityInput.value) + amount;
+
+            if (newQuantity > 0) {
+                quantityInput.value = newQuantity;
+            } else {
+                // If quantity becomes zero, remove the item
+                const cartItem = button.parentNode;
+                cartItem.parentNode.removeChild(cartItem);
+            }
+        }
+
+        function removeCartItem(button) {
+            const cartItem = button.parentNode;
+            cartItem.parentNode.removeChild(cartItem);
+        }
+    </script>
+</body>
+
+</html>
